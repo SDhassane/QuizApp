@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* --- VARIABLES : MODE CLAIR (Bleu dominant) --- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #60A5FA 0%, #1E40AF 100%); /* Bleu ciel → Bleu roi */
+  --navbar-bg: #1E3A8A; /* Bleu nuit */
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --card-border: rgba(255, 255, 255, 0.3);
+  --text-main: #FFFFFF;
+  --text-sub: #DBEAFE; /* Bleu très clair */
+  --accent-color: #2563EB; /* Bleu vif pour les boutons */
+  --accent-hover: #1D4ED8;
+  --input-bg: rgba(0, 0, 0, 0.15);
+}
+
+/* --- VARIABLES : MODE SOMBRE --- */
+body.dark-mode {
+  --bg-gradient: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%); /* Bleu nuit → Noir bleuté */
+  --navbar-bg: #0F172A;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-main: #F3F4F6;
+  --text-sub: #93C5FD; /* Bleu clair */
+  --accent-color: #3B82F6; /* Bleu plus lumineux en sombre */
+  --accent-hover: #2563EB;
+  --input-bg: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-main);
+  transition: background 0.4s, color 0.4s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

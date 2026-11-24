@@ -1,0 +1,108 @@
+.home-page {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: background 0.4s;
+}
+
+.hero-title {
+  color: var(--text-main);
+  font-size: 4.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  color: var(--text-sub);
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.modes-container {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.mode-card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mode-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--accent-color);
+}
+
+.mode-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-title {
+  color: var(--text-main);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mode-desc {
+  color: var(--text-sub);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.mode-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Bouton Live (On garde le rouge pour le contraste) */
+.live-btn {
+  background-color: #e11d48;
+}
+.mode-card:hover .live-btn {
+  background-color: #be123c;
+}
+
+/* Bouton IA (Maintenant BLEU au lieu de vert) */
+.ai-btn {
+  background-color: var(--accent-color);
+}
+.mode-card:hover .ai-btn {
+  background-color: var(--accent-hover);
+}

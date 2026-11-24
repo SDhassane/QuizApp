@@ -1,0 +1,141 @@
+/* On s'assure que la page prend tout l'espace sous la navbar */
+.chat-page {
+  /* On enlève le min-height strict car il peut causer des soucis avec la navbar flottante */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* On aligne le chat vers le haut */
+  padding: 20px;
+  padding-top: 90px; /* ⭐ LA SOLUTION : On pousse le contenu de 90px vers le bas */
+  background-color: #0f172a; 
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 900px;
+  height: 80vh; /* Le chat prend 80% de la hauteur de l'écran */
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 24px;
+  margin-right: 15px;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #000;
+}
+
+.chat-messages {
+  flex: 1; /* Prend tout l'espace restant */
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #fcfcfc;
+}
+
+.chat-info-text {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+}
+
+.message-bubble {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message-bubble.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble.assistant {
+  align-self: flex-start;
+  background-color: #e9ecef;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+/* Le formulaire reste collé en bas */
+.chat-input-form {
+  display: flex;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  gap: 10px;
+}
+
+.chat-input-form input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.chat-input-form input:focus {
+  border-color: #4CAF50;
+}
+
+.chat-input-form button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input-form button:hover {
+  background-color: #45a049;
+}
+
+.chat-input-form button:disabled {
+  background-color: #9ccc9f;
+  cursor: not-allowed;
+}
+
+.loading-text {
+  align-self: flex-start;
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+  margin-left: 5px;
+}

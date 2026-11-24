@@ -1,0 +1,286 @@
+/* =========================================
+   PAGE PRINCIPALE DU MODE LIVE (Choix)
+   ========================================= */
+.live-page {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: background 0.4s;
+}
+
+.live-container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.live-title {
+  color: var(--text-main);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.live-subtitle {
+  color: var(--text-sub);
+  font-size: 1.3rem;
+  margin-bottom: 4rem;
+  font-weight: 300;
+}
+
+.live-actions {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =========================================
+   CARTES (Hôte / Joueur)
+   ========================================= */
+.live-card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  width: 380px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.live-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+}
+
+.live-card h2 {
+  color: var(--text-main);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.live-card p {
+  color: var(--text-sub);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   BOUTONS
+   ========================================= */
+.live-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.live-btn:active {
+  transform: scale(0.98);
+}
+
+.live-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.host-btn {
+  background-color: #e11d48;
+}
+.host-btn:hover:not(:disabled) {
+  background-color: #be123c;
+}
+
+.join-btn {
+  background-color: var(--accent-color);
+}
+.join-btn:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+/* =========================================
+   FORMULAIRE JOUEUR
+   ========================================= */
+.join-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pin-input {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 2px solid var(--card-border);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.pin-input:focus {
+  border-color: var(--accent-color);
+}
+
+.pin-input::placeholder {
+  color: var(--text-sub);
+  opacity: 0.5;
+  font-size: 1rem;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+/* =========================================
+   LOBBY
+   ========================================= */
+.pin-display {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pin-label {
+  color: var(--text-sub);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.pin-code {
+  color: var(--text-main);
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 1rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pin-hint {
+  color: var(--text-sub);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.players-list {
+  margin-bottom: 3rem;
+}
+
+.players-title {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.no-players {
+  color: var(--text-sub);
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.players-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.player-chip {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.start-btn {
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+}
+
+/* =========================================
+   SÉLECTION DU QUIZ
+   ========================================= */
+.quiz-selection {
+  text-align: center;
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.quiz-choice-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-choice-btn:hover {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.quiz-choice-title {
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.quiz-choice-info {
+  color: var(--text-sub);
+  font-size: 0.9rem;
+}
