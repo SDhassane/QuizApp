@@ -3,7 +3,7 @@
 Application web full-stack (Monorepo) permettant de créer, jouer et gérer des quiz interactifs.
 
 ## 📁 Structure du projet
-- `/frontend` : Application React (Vite, Tailwind CSS)
+- `/frontend` : Application React (Vite,  CSS)
 - `/backend` : API REST Laravel (PHP 8.2, Sanctum)
 
 ## 🚀 Fonctionnalités principales
